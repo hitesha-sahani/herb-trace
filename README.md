@@ -1,52 +1,67 @@
-```markdown
-# 🌿 HerbTrace — Blockchain-Powered Herb Supply Chain Tracking
 
-HerbTrace is a full-stack Web3 application for tracking medicinal herbs across their entire lifecycle — **from farmer → processor → lab → consumer** — with complete transparency and tamper-proof storage.
 
-The system uses:
-- **Node.js + Express** (backend API)
-- **HTML/CSS/JS** (frontend)
-- **Ethereum blockchain** (event recording)
-- **IPFS/Pinata** (file storage)
-- **JWT authentication**
-- **Local JSON DB** (for off-chain event history)
+---
+
+# 🌿 HerbTrace
+
+### Blockchain-Powered Herb Supply Chain Tracking
+
+**HerbTrace** is a full-stack Web3 application designed to track medicinal herbs across their entire lifecycle —
+from **farmer → processor → lab → consumer** — ensuring **transparency, traceability, and tamper-proof records**.
+
+---
+
+## 🔍 Overview
+
+HerbTrace combines blockchain, decentralized storage, and a modern web stack to create a trustless system for herbal supply chains.
+
+### 🧱 Tech Stack
+
+* ⚙️ **Backend:** Node.js + Express
+* 🎨 **Frontend:** HTML, CSS, JavaScript
+* ⛓ **Blockchain:** Ethereum (EVM-compatible)
+* 📦 **Storage:** IPFS via Pinata
+* 🔐 **Auth:** JWT
+* 🗄 **Database:** Local JSON (off-chain history)
 
 ---
 
 ## 🔗 Blockchain Compatibility
 
-Although the backend code references **Ganache**, HerbTrace works with **ANY EVM-compatible network**:
+HerbTrace is fully compatible with **any EVM network**.
 
-### Local Networks  
-- Ganache  
-- Hardhat Network  
-- Anvil (Foundry)  
-- Geth Private Chain  
+### 🧪 Local Networks
 
-### Public Testnets  
-- Sepolia  
-- Goerli  
-- Holesky  
-- Polygon Amoy  
-- BNB Smart Chain Testnet  
+* Ganache
+* Hardhat
+* Anvil (Foundry)
+* Geth Private Chain
 
-To switch networks, update `.env`:
+### 🌐 Public Testnets
 
+* Sepolia
+* Goerli
+* Holesky
+* Polygon Amoy
+* BNB Smart Chain Testnet
+
+### ⚙️ Configuration
+
+Update your `.env`:
+
+```env
+RPC_URL=http://127.0.0.1:8545
+GANACHE_PK=0xyourPrivateKey
 ```
 
-RPC_URL=[http://127.0.0.1:8545](http://127.0.0.1:8545)   # or your testnet RPC
-GANACHE_PK=0xyourPrivateKey     # any private key on that network
-
-````
-
-The backend automatically uses these values:
+Backend automatically connects:
 
 ```js
 const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL);
 const signer = new ethers.Wallet(process.env.GANACHE_PK, provider);
-````
+```
 
-No code changes required.
+✅ No code changes required when switching networks.
 
 ---
 
@@ -54,32 +69,39 @@ No code changes required.
 
 ### 👨‍🌾 Farmer Module
 
-* Add new herb batches
+* Add herb batches
 * Auto-generate Batch IDs
-* Upload images (stored on IPFS)
-* Auto-attach geo-location
-* Stored on blockchain + local DB
+* Upload images (IPFS)
+* Capture geo-location
+* Store on blockchain + local DB
+
+---
 
 ### 🏭 Processor Module
 
-* View pending farmer batches
-* Process herbs with facility details
-* Add processing events
-* Blockchain event logging
+* View incoming batches
+* Add processing details
+* Record facility information
+* Log events on blockchain
+
+---
 
 ### 🔬 Lab Module
 
-* Upload lab test reports (PDF)
+* Upload test reports (PDF)
 * Store reports on IPFS
-* Attach test results
-* Add geo coordinates
-* Blockchain logging
+* Attach quality results
+* Add geo-coordinates
+* Blockchain verification
+
+---
 
 ### 🧾 Consumer View
 
-* Scan QR → view complete batch history
-* Timeline-style UI
-* Map showing movement path
+* Scan QR code
+* View full batch history
+* Timeline visualization
+* Interactive geo-map tracking
 
 ---
 
@@ -88,30 +110,30 @@ No code changes required.
 ```
 herb-trace/
 │
-├─ backend/
-│   ├─ server.js        # Main API
-│   ├─ contracts/       # Solidity smart contracts
-│   ├─ scripts/         # Deployment scripts
-│   ├─ routes/geo.js    # Geo APIs
-│   ├─ localDB.json     # Local JSON DB
-│   ├─ pinataHelper.js  # IPFS uploads
+├── backend/
+│   ├── server.js
+│   ├── contracts/
+│   ├── scripts/
+│   ├── routes/geo.js
+│   ├── localDB.json
+│   ├── pinataHelper.js
 │
-├─ frontend/
-│   ├─ index.html
-│   ├─ login.html
-│   ├─ farmer.html
-│   ├─ processor.html
-│   ├─ lab.html
-│   ├─ consumer.html
-│   ├─ qr.html
-│   ├─ style.css
+├── frontend/
+│   ├── index.html
+│   ├── login.html
+│   ├── farmer.html
+│   ├── processor.html
+│   ├── lab.html
+│   ├── consumer.html
+│   ├── qr.html
+│   ├── style.css
 │
-└─ README.md
+└── README.md
 ```
 
 ---
 
-## ⚙️ Installation & Running
+## ⚙️ Installation & Setup
 
 ### 1️⃣ Install Dependencies
 
@@ -120,9 +142,13 @@ cd backend
 npm install
 ```
 
-### 2️⃣ Create `.env` File
+---
 
-```
+### 2️⃣ Configure Environment
+
+Create `.env`:
+
+```env
 RPC_URL=http://127.0.0.1:8545
 GANACHE_PK=0xyourPrivateKey
 PINATA_JWT=your_pinata_jwt
@@ -130,21 +156,27 @@ SECRET_KEY=supersecret
 PORT=3000
 ```
 
-### 3️⃣ Start Local Blockchain (example: Hardhat)
+---
+
+### 3️⃣ Start Blockchain
+
+Example (Hardhat):
 
 ```bash
 npx hardhat node
 ```
 
-or Ganache, Anvil, Geth — any network works.
+(Or use Ganache / Anvil / Geth)
 
-### 4️⃣ Start Backend Server
+---
+
+### 4️⃣ Run Backend
 
 ```bash
 npm start
 ```
 
-Server:
+Server runs at:
 
 ```
 http://localhost:3000
@@ -152,39 +184,40 @@ http://localhost:3000
 
 ---
 
-## 📦 Smart Contract (Traceability.sol)
+## 📦 Smart Contract
 
-Tracks 3 event types:
+**Traceability.sol** tracks:
 
-* Collection event
-* Processing step
-* Quality test event
+* 🌱 Collection events
+* 🏭 Processing steps
+* 🔬 Quality tests
 
-Events are grouped by `batchId` and fetched using:
+### Fetch Events
 
 ```solidity
-function getEvents(string calldata batchId) external view returns (Event[] memory);
+function getEvents(string calldata batchId) 
+    external view returns (Event[] memory);
 ```
 
 ---
 
-## 🗺 QR + Provenance Map
+## 🗺 QR & Provenance Tracking
 
-Each batch gets a QR code that links to:
+Each batch generates a QR code linking to:
 
 ```
 /provenance/<batchId>
 ```
 
-This page displays:
+### 📊 Displays:
 
-* Full timeline
-* Geo-tracking map
-* IPFS-linked images and lab reports
+* Full lifecycle timeline
+* Geo-location movement map
+* IPFS images & lab reports
 
 ---
 
-## 🧪 Testing with Hardhat
+## 🧪 Testing
 
 ```bash
 npx hardhat test
@@ -194,14 +227,12 @@ npx hardhat test
 
 ## 📜 License
 
-MIT License — free to use and modify.
+MIT License — free to use, modify, and distribute.
 
 ---
 
-## ❤️ Contribution
+## ❤️ Contributing
 
-Pull requests and improvements are welcome!
+Pull requests, feature ideas, and improvements are always welcome!
 
-```
-```
-
+---
