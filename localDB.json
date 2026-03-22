@@ -1982,7 +1982,34 @@
       "imageLink": "https://gateway.pinata.cloud/ipfs/QmViy8pX1NEe1U14tecoegb7QS45e5orMDEydBuHmHdEw8",
       "farmer": "farmer1",
       "timestamp": 1763664929891,
-      "status": "pending"
+      "status": "processed"
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MI7SK9CZ-3ED",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "drying",
+      "processor": "processor1",
+      "lat": 26.9069,
+      "long": 75.783,
+      "timestamp": 1774199703630,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MI7SK9CZ-3ED",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmYPPS1x78v7CS7jRCLwPHCHaVNjftqUyaS5bijqGwhNKo",
+      "lat": 26.9069,
+      "long": 75.783,
+      "lab": "lab1",
+      "timestamp": 1774199739431,
+      "status": "tested"
     }
   ],
   "BATCH-MI7VHXFJ-2X5": [
@@ -2149,6 +2176,48 @@
       },
       "txHash": "0x849157870e86d695df817c8cb34da4028773ad29e55de8b4d9012babbcd067c4",
       "timestamp": 1763673092394
+    }
+  ],
+  "BATCH-MN2060ZC-60B": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MN2060ZC-60B",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 26.9069,
+      "long": 75.783,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmcubXCXVZhf2cffreivW9TnskLWeswpwG4LgYogCHutyF",
+      "farmer": "farmer1",
+      "timestamp": 1774198817400,
+      "status": "processed"
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MN2060ZC-60B",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "drying",
+      "processor": "processor1",
+      "lat": 26.9069,
+      "long": 75.783,
+      "timestamp": 1774198908794,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MN2060ZC-60B",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmYPPS1x78v7CS7jRCLwPHCHaVNjftqUyaS5bijqGwhNKo",
+      "lat": 26.9069,
+      "long": 75.783,
+      "lab": "lab1",
+      "timestamp": 1774198950229,
+      "status": "tested"
     }
   ]
 }
